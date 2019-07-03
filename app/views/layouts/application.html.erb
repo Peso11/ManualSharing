@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : t('main.name') %></title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= favicon_link_tag '/favicon.ico' %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <%= javascript_include_tag "application" %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar', user: current_user %>
+
+    <div class="container-fluid">
+      <%= bootstrap_flash %>
+      <%= yield(:side_bar) %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+callback: http://%{url}/users/auth/%{provider}/callback
+scope: email
+
+development:
+  url: localhost:3000
+  facebook:
+    key: '663987117321728'
+    secret: '6602a83658eace0f16bd57316f586d54'
+  vkontakte:
+    key: '6680317'
+    secret: '1N4dDp4R7t2KsRb7QIw9'
+  twitter:
+    key: 'TN91mreAUajGGrQiDjAs5yBmW'
+    secret: 'a2usDsSHQfUJJdu8Dl02aeMKDqunlzdyQ0hs3eta6018taQK3T'
+  google_oauth2:
+    key: '746170645489-1bgc7gq7ppt1lkevf6cadh9r7mnlfl2b.apps.googleusercontent.com'
+    secret: '1Djad8xRDTBbqJETKYlIhuOJ'
+

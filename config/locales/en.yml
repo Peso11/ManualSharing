@@ -1,0 +1,106 @@
+en:
+  main:
+    name: "ManualsSharing"
+    copyright: "Copyright"
+  helpers:
+    links:
+      cancel: "Cancel"
+      create: "Create"
+      edit: "Edit"
+      editing: "Editing"
+      confirm: "Are you sure?"
+      send: "Send"
+      new:
+        male: "New"
+        female: "New"
+      more: "More"
+      all: "The end."
+      navigation:
+        next: "Next →"
+        previous: "← Back"
+  activerecord:
+    models:
+      manual:
+        one: "Manual"
+        other: "Manuals"
+      category:
+        one: "Category"
+        many: "Categories"
+      tag:
+        one: "Tag"
+        many: "Tags"
+        cloud: "Top 30 tags"
+      comment:
+        one: "Comment"
+        many: "Comments"
+      step:
+        one: "Step"
+        many: "Steps"
+      block:
+        one: "Block"
+        many: "Blocks"
+        text:
+          name: "Text"
+          placeholder: "Add some text here. You can use Markdown :)"
+        video:
+          name: "Video"
+        image:
+          name: "Image"
+    attributes:
+      manual:
+        name: "Name"
+        preview: "Preview"
+        metadata:
+          updated: "Updated"
+          created_at: "Posted"
+          author: "Author"
+      step:
+        name: "Name"
+      user:
+        profile: "Profile"
+        about: "About"
+        interests: "Interests"
+    controllers:
+      manual:
+        index:
+          title: "All manuals"
+          read: "Read"
+        new:
+          title: "New manual"
+        edit:
+          title: "Editing manual"
+          preview: "Preview"
+      step:
+        edit:
+          title: "Editing step "
+          back: "Back to manual"
+        show:
+          name: "Step %{priority}: %{name}"
+      comment:
+        create: "Leave comment"
+      user:
+        sign_in: "Sign in"
+        sign_in_through: "Sign in with %{provider}"
+        logout: "Sign out"
+      search:
+        title: "Search results for query '%{query}'"
+        button: "Search"
+      categories:
+        show:
+          title: "Manuals from category '%{category}'"
+  angular:
+    form:
+      status:
+        saved: "All changed saved!"
+        unsaved: "Unsaved changes."
+  errors:
+    oops: "Oops!"
+    search:
+      not_found: "Nothing found for your request"
+    category:
+      not_found: "There is nothing here. Maybe you want to add your manual?"
+      main_path: "Home"
+    comment:
+      not_found: "There are no comments for this publication."
+    not_found:
+      message: "Not found"

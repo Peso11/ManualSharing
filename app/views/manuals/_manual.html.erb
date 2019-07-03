@@ -1,0 +1,18 @@
+<div class="card card-default col-md-12" style="padding: 10px;">
+  <h2>
+    <%= link_to manual.name, manual_path(manual), :class => 'col-xs' %>
+  </h2>
+  <div class="card-body">
+    <%= link_to image_tag(manual.preview, :class => "img-responsive center-block"), manual_path(manual) %>
+  </div>
+  <%= render 'manuals/metadata', manual: manual %>
+  <hr>
+  <div class="pull-left"><%= t('activerecord.models.comment.many') %>: <span class="badge"><%= manual.comments_count %></span></div>
+  <small class="pull-right"><%= link_to t('activerecord.controllers.manual.index.read'), manual_path(manual), class: "btn btn-info" %></small>
+  <small class="pull-right">
+      <%= render 'manuals/edit_buttons', manual: manual%>
+  </small>
+  <div class="clearfix"></div>
+  <hr>
+</div>
+

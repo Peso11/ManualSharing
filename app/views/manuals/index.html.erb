@@ -1,0 +1,30 @@
+<% content_for(:side_bar) do %>
+  <div class="col-md-3">
+    
+    <%= render :partial => "shared/tags" %>
+    <%= render :partial => "shared/categories" %>
+  </div>
+<% end %>
+<div class="col-md-9">
+  <h1 class="page-header">
+    <%= t('activerecord.controllers.manual.index.title') %>
+    <% if can? :create, Manual %>
+      <small>
+        <%= link_to t('helpers.links.new.female'), new_manual_path, :class => 'btn btn-primary pull-right' %>
+      </small>
+    <% end %>
+  </h1>
+
+  <div class="infinite-table">
+    <table class="col-md-12">
+      <%= render @manuals %>
+      <%= render :partial => 'manuals/not_found'  if @manuals.empty? %>
+    </table>
+    <div class="text-center">
+      <p class="pagination">
+        <%= link_to_next_page(@manuals, t('helpers.links.more'), :remote => true, :class => "btn btn-primary btn-block") %>
+      </p>
+    </div>
+  </div>
+</div>
+

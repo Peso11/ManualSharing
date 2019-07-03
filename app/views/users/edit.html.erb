@@ -1,0 +1,77 @@
+<div class="form-group" ng-controller="UserEditCtrl">
+  <form name="form.state" auto-save-form="saveForm()">
+    <div class="col-md-12">
+      <div class="row profile">
+        <div class="col-md-3">
+          <div class="profile-sidebar">
+            
+            <div class="profile-usertitle">
+              <div class="profile-usertitle-name" style="text-align:center;">
+                <input name="text" ng-model="user.name" class="form-control"/>
+              </div>
+              <div class="profile-usertitle-job">
+                <%= @user.email %>
+              </div>
+            </div>
+            <div class="profile-userbuttons">
+              <%= render 'users/edit_buttons', user: @user %>
+            </div>
+            <div class="profile-usermenu">
+              <ul class="nav">
+                <li>
+                  <%= link_to user_path(@user) do %>
+                    <i class="glyphicon glyphicon-home"></i>
+                      <%= t('activerecord.attributes.user.profile') %>
+                  <% end %>
+                </li>
+                <li class="active">
+                  <a>
+                    <i class="glyphicon glyphicon-edit"></i>
+                    <%= t('helpers.links.editing') %>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="hidden" ng-init="initializeUser(<%= @user.id %>)">
+        </div>
+
+        <div class="form-group">
+          <span ng-if="(form.state.$dirty && form.state.$valid)">
+            <div id="spinner" ng-show="loading">
+               <img src="/loader.gif">
+            </div>
+          </span>
+              <span ng-if="!(form.state.$dirty && form.state.$valid)">
+            <div class="btn btn-success" style="left: 5px; bottom: 45px; position: fixed; z-index: 999;"><span class="glyphicon glyphicon-floppy-saved"></span> <%= t('angular.form.status.saved') %></div>
+          </span>
+        </div>
+
+        <div class="col-md-9">
+          <div id="profile" class="profile-content" style="display: block;">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <%= t('activerecord.attributes.user.about') %>
+              </div>
+              <div class="panel-body">
+                <textarea msd-elastic class="form-control" cols="78" rows="1" ng-model="user.about" placeholder="Write some text about yourself here"></textarea>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <%= t('activerecord.attributes.user.interests') %>
+              </div>
+              <div class="panel-body">
+                <textarea msd-elastic class="form-control" cols="78" rows="1" ng-model="user.interests" placeholder="Write some text about yourself here"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
